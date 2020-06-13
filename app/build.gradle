@@ -1,0 +1,95 @@
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 1
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.abhijithsreekar.popularmovies"
+        minSdkVersion 25
+        targetSdkVersion 27
+        versionCode 1
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        def API_KEY = 'API_KEY'
+        def IMAGE_BASE_URL = 'IMAGE_BASE_URL'
+        def LANGUAGE = 'LANGUAGE'
+        def YOUTUBE_BASE_VIDEO_URL = 'YOUTUBE_BASE_VIDEO_URL'
+        def YOUTUBE_BASE_IMAGE_URL = 'YOUTUBE_BASE_IMAGE_URL'
+        def YOUTUBE_IMAGE_EXTENSION = 'YOUTUBE_IMAGE_EXTENSION'
+
+        flavorDimensions "default"
+        dev {
+            applicationIdSuffix '.dev'
+            dimension "default"
+            resValue 'string', API_KEY, '"2abea955e719b669f2d63b54e0bf348e"'
+            resValue 'string', IMAGE_BASE_URL, '"https://image.tmdb.org/t/p/w500/"'
+            resValue 'string', LANGUAGE, '"en-US"'
+            resValue 'string', YOUTUBE_BASE_VIDEO_URL, '"https://youtube.com/watch?v="'
+            resValue 'string', YOUTUBE_BASE_IMAGE_URL, '"http://img.youtube.com/vi/"'
+            resValue 'string', YOUTUBE_IMAGE_EXTENSION, '"/mqdefault.jpg"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    dependencies {
+
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support:animated-vector-drawable:27.1.1'
+        implementation 'com.android.support:exifinterface:27.1.1'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+        // Recycler view
+        implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+        // Grid Layout
+        implementation 'com.android.support:gridlayout-v7:27.1.1'
+
+        // Card view
+        implementation 'com.android.support:cardview-v7:27.1.1'
+
+        // Constraint Layout
+        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+        // Picasso - Image processing
+        implementation 'com.squareup.picasso:picasso:2.71828'
+
+        // Butterknife - Layout binding
+        implementation 'com.jakewharton:butterknife:8.8.1'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+        // Room - database
+        def room_version = "1.1.1"
+        implementation "android.arch.persistence.room:runtime:$room_version"
+        annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+
+        // Retrofit - Network Handling
+        implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+        implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+        // ViewModel and LiveData
+        def lifecycle_version = "1.1.1"
+        implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+        annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
+
+    }
+}

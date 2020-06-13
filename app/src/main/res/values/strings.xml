@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">FilmyWorld</string>
+    <string name="movie_content_description">movieImage</string>
+    <string name="movie_text_hint">popular image</string>
+    <string name="movie_release_date">release_date</string>
+    <string name="iv_details_content_description">Movie_selected</string>
+    <string name="plotAnalysis">Plot Analysis :</string>
+    <string name="trailers">Movie Trailers :</string>
+    <string name="divider">|</string>
+    <string name="toprated_movies">Top Rated Movies</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="favorite_movies">Favorite Movies</string>
+    <string name="no_description_available">No description available</string>
+    <string name="reviews">Reviews :</string>
+    <string name="cast">Cast :</string>
+    <string name="castNotAvailable">Cast Not Available</string>
+    <string name="trailerNotAvailable">Trailers Not Available</string>
+    <string name="reviewsNotAvailable">Reviews Not Available</string>
+    <string name="plotNotAvailable">Plot Synopsis Not Available</string>
+    <string name="Release_Date_Title">Release Date:</string>
+    <string name="Language_Title">Language:</string>
+    <string name="Rating_Title">Rating:</string>
+    <string name="Favorite_Removed">Movie removed from favorites</string>
+    <string name="Favorite_Added">Movie added to favorites</string>
+    <string name="Network_Status_Not_Available">Network Connection Not Available</string>
+    <string name="Not_Available_Text">Not available</string>
+    <string name="Something_wrong_text">Something went wrong...Please try later!</string>
+    <string name="FavoritesNotFound">No favorite Movies Found</string>
+</resources>
